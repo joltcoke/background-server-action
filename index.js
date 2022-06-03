@@ -64,7 +64,7 @@ async function run() {
   }
   // allow commands to be separated using commas or newlines
   const separateCommands = command
-    .match(/([^,\n]*["'][^"']+["'][^,\n]*)|[^,\n]+/g)
+    .split(/,|\n/)
     .map((s) => s.trim())
     .filter(Boolean)
   debug(

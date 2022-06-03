@@ -64,7 +64,7 @@ async function run() {
   }
   // allow commands to be separated using commas or newlines
   const separateCommands = command
-    .split(/,|\n/)
+    .split('\n')
     .map((s) => s.trim())
     .filter(Boolean)
   debug(
@@ -110,7 +110,7 @@ const startServersMaybe = () => {
 
   // allow commands to be separated using commas or newlines
   const separateStartCommands = startCommand
-    .split(/,|\n/)
+    .split('\n')
     .map((s) => s.trim())
     .filter(Boolean)
   debug(
@@ -143,7 +143,7 @@ const startServersMaybe = () => {
   const waitTimeoutMs = waitOnTimeout * 1000
 
   const waitUrls = waitOn
-    .split(',')
+    .split('\n')
     .map((s) => s.trim())
     .filter(Boolean)
   debug(`Waiting for urls ${waitUrls.join(', ')}`)
